@@ -1,0 +1,868 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
+}
+
+html {
+  scroll-padding-top: 80px;
+}
+
+:root {
+  --Purple: #4b1c71;
+  --PurpleLight: #7f4ca5;
+  --PurpleLight2: #b57edc;
+  --PurpleLight3: #dbb6ee;
+  --PurpleWhite: #fff0ff;
+}
+
+
+body {
+  background-color: var(--PurpleWhite);
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+Header {
+  position: fixed;
+  width: 100%;
+  background-color: #4b1c71cc;
+  backdrop-filter: blur(10px);
+  top: 0;
+  align-items: center;
+  color: white;
+  z-index: 1000;
+}
+
+
+Header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  place-items: center;
+}
+
+Header h1 {
+  font-size: clamp(1.5rem, 5vw, 3.5rem);
+  font-weight: 500;
+}
+
+Header h1 span {
+  color: var(--PurpleLight2);
+}
+
+nav {
+  display: flex;
+  align-items: center;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 3rem;
+}
+
+nav li {
+  position: relative;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease-in-out;
+}
+
+nav a:hover {
+  color: var(--PurpleLight3);
+}
+
+nav a:hover::after {
+  content: '';
+  width: 30%;
+  height: 2px;
+  background-color: var(--PurpleLight3);
+  bottom: -4px;
+  left: 5px;
+  position: absolute;
+  transition: all 0.3s ease-in-out;
+}
+
+.Registation_btn {
+  display: flex;
+}
+
+.Registation_btn .btn {
+  background: var(--PurpleLight);
+  border: none;
+  color: white;
+  padding: 0.5rem 1rem;
+  margin-left: 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.Registation_btn .btn:hover {
+  background: var(--PurpleLight2);
+}
+
+.menu-icon {
+  display: none;
+  font-size: 1.5rem;
+}
+
+/* Home Section */
+
+.Home {
+  background: url(./assets/Bg-1.jpg) no-repeat;
+  background-position: center;
+  background-size: cover;
+  min-height: 90vh;
+  color: var(--PurpleWhite);
+  text-align: center;
+}
+
+.Home h1 {
+  margin-top: 150px;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+.Home p {
+  margin-top: 10px;
+  font-size: 1.2rem;
+  color: var(--PurpleLight3);
+}
+
+.Home .btn {
+  background: var(--PurpleLight);
+  border: none;
+  color: white;
+  padding: 0.75rem 1.8rem;
+  margin-top: 20px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.Home .btn:hover {
+  background: var(--PurpleLight2);
+}
+
+/* Home buttom */
+
+.Home_crypto {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 40px;
+  left: 50%;
+  bottom: 20px;
+  transform: translateX(-50%);
+}
+
+.Crypto .Token {
+  width: 320px;
+  background: var(--PurpleWhite);
+  border: none;
+  color: #000;
+  padding: 1.5rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.Crypto .Token:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+
+.Crypto .Home_crypto_item {
+  display: flex;
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+.Home_crypto_item img {
+  width: 60px;
+  height: 60px;
+  margin-right: 10px;
+  border-radius: 50%;
+}
+
+.Crypto .Home_crypto_price {
+  display: flex;
+  justify-content: space-between;
+  place-items: center;
+}
+
+.Home_crypto_price .price {
+  text-align: left;
+}
+
+.Home_crypto_item h3,
+.Home_crypto_price .price h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.Home_crypto_price .rate {
+  text-align: right;
+}
+
+.Home_crypto_price .rate h4 {
+  font-size: 1.2rem;
+  color: green;
+}
+
+.Home_crypto_item p,
+.Home_crypto_price .price p,
+.rate p {
+  font-size: 1rem;
+  color: #000;
+  margin: 0;
+}
+
+/* Trust Setion */
+
+.Trust .container {
+  padding: 9rem 1.8rem 3rem 1.8rem;
+}
+
+.Trust .container .info {
+  width: 60%;
+  margin: auto;
+  margin-bottom: 60px;
+}
+
+.Trust h1,
+.Purchase h1 {
+  text-align: center;
+  font-weight: 600;
+  font-size: 2.5rem;
+}
+
+.Trust p,
+.Purchase p {
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+.Trust .Trust-item {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  place-items: center;
+}
+
+.Trust img {
+  width: auto;
+  height: 100px;
+  margin-right: 20px;
+}
+
+.Trust_info {
+  padding: 1.5rem;
+  width: 520px;
+  display: flex;
+  justify-content: center;
+  border-radius: 5px;
+  background-color: var(--Purple);
+  color: var(--PurpleWhite);
+  transition: all 0.3s ease;
+}
+
+.Trust_info:hover {
+  transform: translateY(-5px);
+}
+
+.Trust .info h1 {
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+
+.Trust_info_item p {
+  text-align: left;
+  color: var(--PurpleLight2);
+}
+
+.Trust_info_item .btn {
+  background: var(--PurpleLight);
+  border: none;
+  color: white;
+  padding: 0.5rem 1rem;
+  margin-top: 10px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.Trust_info_item .btn:hover {
+  background: var(--PurpleLight2);
+}
+
+/* Purchase Area */
+
+.Purchase {
+  width: 1200px;
+  position: relative;
+  left: 50%;
+  bottom: -100px;
+  transform: translateX(-50%);
+  padding: 3rem;
+  border-radius: 1.5rem;
+  background-color: #fff;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.Purchase-content {
+  margin-bottom: 30px;
+}
+
+.Purchase .Purchase-form {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  place-items: center;
+}
+
+.Purchase input,
+select {
+  width: 200px;
+  padding: 15px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: var(--PurpleLight3);
+  outline: none;
+  color: var(--Purple);
+}
+
+.Purchase input::placeholder {
+  color: var(--Purple);
+}
+
+.Purchase select option {
+  background-color: var(--PurpleLight3);
+  color: var(--Purple);
+}
+
+option:hover {
+  background-color: var(--PurpleLight2);
+  color: #000;
+  cursor: pointer;
+  border: none;
+}
+
+.Purchase .btn {
+  width: 120px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: var(--PurpleLight);
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.Purchase .btn:hover {
+  background-color: var(--PurpleLight2);
+}
+
+/* Blog Section */
+
+.Blog {
+  padding: 9rem 1.8rem 3rem 1.8rem;
+  background-color: #fff;
+}
+
+.Blog h1 {
+  width: 60%;
+  margin: auto;
+  text-align: center;
+  font-weight: 600;
+  font-size: 2.5rem;
+  margin-bottom: 140px;
+}
+
+.Blog .Blog-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(343px, 1fr));
+  gap: 3rem;
+  margin-top: 60px;
+}
+
+.Blog .Blog-content-items {
+  width: 310px;
+  height: 390px;
+  position: relative;
+  background-color: var(--Purple);
+  color: var(--PurpleWhite);
+  padding: 1.5rem;
+  margin-bottom: 100px;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  place-items: center;
+  padding-top: 120px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.Blog .Blog-content-items p {
+  color: var(--PurpleLight3);
+}
+
+.Blog .Blog-content-items:hover {
+  transform: translateY(-5px);
+}
+
+.Blog .img-container {
+  background-color: var(--PurpleLight2);
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  top: -100px;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  border-bottom-right-radius: 70px;
+  border-top-left-radius: 70px;
+  transform: rotate(50deg);
+  border: none;
+  padding: 1rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.Blog .Blog-content-items img {
+  position: relative;
+  top: 40px;
+  width: 80px;
+  height: 80px;
+  transform: rotate(-50deg);
+}
+
+.Blog .Blog-content-items h2 {
+  margin: 20px 0 10px 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.Blog-contant-item {
+  position: relative;
+  background-color: var(--Purple);
+  color: var(--PurpleWhite);
+  padding: 1.5rem;
+  border-radius: 10px;
+  width: 310px;
+  height: 390px;
+  font-size: 1.1rem;
+  place-items: center;
+  text-align: center;
+  transition: all 0.3s ease;
+  place-content: center;
+  background: url(./assets/Customer-care-personnel.jpg) no-repeat center center/cover;
+}
+
+.Blog-contant-item img {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.Blog-contant-item:hover {
+  transform: translateY(-5px);
+}
+
+.Blog-contant-item .btn {
+  background: var(--PurpleLight);
+  border: none;
+  color: white;
+  padding: 0.5rem 1rem;
+  margin-top: 10px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.Blog-contant-item .btn:hover {
+  background: var(--PurpleLight2);
+}
+
+/* Contact Section */
+
+.Contact {
+  padding: 3rem 1.8rem;
+  background-color: var(--Purple);
+  text-align: center;
+}
+
+.Contact .container {
+  display: grid;
+  gap: 3rem;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: space-between;
+}
+
+.Contact .About p {
+  text-align: left;
+  font-size: 1.1rem;
+  color: var(--PurpleLight3);
+  margin-bottom: 20px;
+}
+
+.Contact h2 {
+  text-align: center;
+  font-weight: 600;
+  font-size: 2.5rem;
+  color: var(--PurpleWhite);
+  margin-bottom: 20px;
+}
+
+.Contact-content p {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  font-size: 1.1rem;
+  color: var(--PurpleLight3);
+  margin-bottom: 30px;
+}
+
+.Contact .contact-form {
+  display: grid;
+  gap: 1rem;
+  place-items: center;
+}
+
+.Contact .contact-form input,
+.Contact .contact-form textarea {
+  width: 300px;
+  padding: 15px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: var(--PurpleWhite);
+  outline: none;
+  color: var(--Purple);
+}
+
+.Contact .contact-form input::placeholder,
+.Contact .contact-form textarea::placeholder {
+  color: var(--Purple);
+}
+
+.Contact .contact-form textarea {
+  height: 100px;
+  resize: none;
+}
+
+.Contact .contact-form .btn {
+  width: 300px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: var(--PurpleLight);
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.Contact .contact-form .btn:hover {
+  background-color: var(--PurpleLight2);
+}
+
+/* Footer Section */
+
+.Footer {
+  padding: 1rem;
+  text-align: center;
+  background-color: var(--PurpleLight2);
+  color: var(--PurpleWhite);
+}
+
+.m-cont {
+  display: none;
+}
+
+.m-cont ul {
+  display: block;
+  margin-top: 40px;
+}
+
+.m-cont ul li {
+  margin: 30px 0;
+}
+
+.m-cont a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease-in-out;
+}
+
+.m-cont a:hover {
+  color: var(--PurpleLight3);
+}
+
+hr {
+  width: 100%;
+  border-top: 1px solid var(--PurpleLight3);
+}
+
+.m-cont .btn {
+  width: 120px;
+  background: var(--PurpleLight);
+  border: none;
+  color: white;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.m-cont .btn:hover {
+  background: var(--PurpleLight2);
+}
+
+#close {
+  display: none;
+}
+
+@media (max-width: 768px) {
+
+  .menu-icon {
+    display: flex;
+  }
+
+  .Registation_btn {
+    display: none;
+  }
+
+  .m-cont {
+    width: 170px;
+    flex-direction: column;
+    gap: 1rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: var(--Purple);
+    padding: 1.5rem;
+    border-radius: 5px;
+    animation: slideDown 0.3s ease;
+    z-index: -100;
+  }
+
+  .m-cont {
+    display: flex;
+  }
+
+  nav {
+    display: none;
+  }
+
+  .Home {
+    min-height: 65vh;
+  }
+
+  .Contact .container {
+    grid-template-columns: 1fr;
+  }
+
+  .Home h1 {
+    margin-top: 100px;
+
+  }
+
+  .container,
+  .Blog {
+    padding: 1rem;
+  }
+
+  .Trust .container .info {
+    width: 100%;
+  }
+
+  .Trust .container {
+    padding: 3rem 1rem;
+  }
+
+  .Crypto .Home_crypto {
+    flex-direction: column;
+    gap: 1rem;
+    position: static;
+    transform: none;
+    margin-top: 20px;
+  }
+
+  .Crypto .Token {
+    width: 90%;
+    margin: auto;
+  }
+
+  .Purchase {
+    width: 100%;
+    left: 0;
+    transform: none;
+    padding: 2rem;
+    position: relative;
+  }
+
+  .Purchase-form {
+    flex-direction: column;
+  }
+
+  .Trust .Trust-item {
+    flex-direction: column;
+  }
+
+  .Trust_info {
+    width: 100%;
+  }
+
+  .Blog h1 {
+    width: 100%;
+    font-size: 2rem;
+    margin-top: 120px;
+  }
+
+  .Blog .Blog-content {
+    grid-template-columns: 1fr;
+  }
+
+  .Contact p {
+    text-align: center;
+  }
+}
+
+@media (max-width: 1024px) {
+
+  .menu-icon {
+    display: flex;
+  }
+
+  .Registation_btn {
+    display: none;
+  }
+
+  .m-cont {
+    width: 400px;
+    align-items: left;
+    flex-direction: column;
+    gap: 1rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: var(--Purple);
+    padding: 1.5rem;
+    border-radius: 5px;
+    animation: slideDown 0.3s ease;
+    z-index: -100;
+    place-items: baseline;
+  }
+
+  .m-cont {
+    display: flex;
+    align-items: left;
+    text-align: left;
+  }
+
+  nav {
+    display: none;
+  }
+
+  .Home {
+    min-height: 40vh;
+  }
+
+  .Contact .container {
+    grid-template-columns: 1fr;
+  }
+
+  .Home h1 {
+    margin-top: 100px;
+
+  }
+
+  .container,
+  .Blog {
+    padding: 1rem;
+  }
+
+  .Trust .container .info {
+    width: 100%;
+  }
+
+  .Trust .container {
+    padding: 3rem 1rem;
+  }
+
+  .Crypto .Home_crypto {
+    flex-direction: column;
+    gap: 1rem;
+    position: static;
+    transform: none;
+    margin-top: 20px;
+  }
+
+  .Crypto .Token {
+    width: 90%;
+    margin: auto;
+  }
+
+  .Purchase {
+    width: 100%;
+    left: 0;
+    transform: none;
+    padding: 2rem;
+    position: relative;
+  }
+
+  .Purchase-form {
+    flex-direction: column;
+  }
+
+  .Trust .Trust-item {
+    flex-direction: column;
+  }
+
+  .Trust_info {
+    width: 100%;
+  }
+
+  .Blog h1 {
+    width: 100%;
+    font-size: 2rem;
+    margin-top: 120px;
+  }
+
+  .Contact p {
+    text-align: center;
+  }
+
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
