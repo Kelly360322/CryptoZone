@@ -1,7 +1,8 @@
+import bg from "./assets/Bg-1.jpg";
 
 function Home() {
     return (
-        <div className="Home" id="home">
+        <div className="Home" id="home" style={{ backgroundImage: `url(${bg})` }}>
             <div className="container">
                 <div className="Home_content">
                     <h1>Your Globel OTC desk for Cyptocurrencies</h1>
