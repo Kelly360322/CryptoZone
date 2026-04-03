@@ -1,4 +1,4 @@
-import bg from "./assets/Bg-1.jpg";
+import bg from "./assets/BG-1.jpg";
 
 function Home() {
     return (
